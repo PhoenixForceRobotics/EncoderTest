@@ -12,7 +12,7 @@ public class Log{
     {
         final Logger theLog = Logger.getLogger(classname);
         final StreamHandler handler = new StreamHandler(System.out, new SimpleFormatter());
-        handler.setLevel(Constants.Misc.logLevel);
+        //handler.setLevel(Constants.Misc.logLevel);
         theLog.addHandler(handler)                                       ;
         return theLog;
     }

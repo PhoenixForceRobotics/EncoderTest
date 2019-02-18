@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 import frc.robot.subsystems.OI;
+import frc.robot.subsystems.Rotater;
+import frc.robot.commands.EncoderCheck;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +29,7 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
   public static OI oi;
+  public static Rotater rotater;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -36,7 +39,8 @@ public class Robot extends TimedRobot {
   public void robotInit() {
       m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
       m_chooser.addOption("My Auto", kCustomAuto);
-
+      rotater = new Rotater();
+      oi = new OI();
   }
 
   /**
@@ -90,7 +94,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopInit() {
-
+    Scheduler.getInstance().add(new EncoderCheck());
   }
 
   @Override

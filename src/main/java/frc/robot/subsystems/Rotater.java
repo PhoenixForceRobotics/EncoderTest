@@ -19,10 +19,15 @@ public class Rotater extends Subsystem{
         rotater = new Motor(Constants.MotorMap.Rotater.ROTATER, MotorType.kBrushed, Constants.MotorMap.Rotater.ROATER_REVERSERD, Constants.MotorMap.Rotater.ROTATER_AMPCAP);
         rotater.setParameter(CANSparkMaxLowLevel.ConfigParameter.kSensorType, 2);
         encoder = rotater.getEncoder();
+        encoder.setPosition(0);
     }
 
     public void checkEncoder(){
         System.out.println(encoder.getPosition());
+    }
+
+    public void RunMotor(double speed){
+        rotater.set(speed);
     }
 
     public void initDefaultCommand()

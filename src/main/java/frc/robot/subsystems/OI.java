@@ -2,6 +2,7 @@ package frc.robot.subsystems;
 
 import frc.controllers.BobXboxController;
 import frc.robot.Constants;
+import frc.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -16,6 +17,9 @@ public class OI
     public OI() {
         driverController = new BobXboxController(0, 1, 1);
 
-
+        driverController.aButton.whileHeld(new RunMotors());
+        driverController.bButton.whileHeld(new RunMotors());
+        driverController.xButton.whileHeld(new RunMotors());
+        driverController.yButton.whileHeld(new RunMotors());
     }
 }

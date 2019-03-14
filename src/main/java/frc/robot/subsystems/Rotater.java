@@ -1,6 +1,5 @@
 package frc.robot.subsystems;
 
-import frc.robot.Robot;
 import frc.robot.Constants;
 import frc.robot.utility.Motor;
 

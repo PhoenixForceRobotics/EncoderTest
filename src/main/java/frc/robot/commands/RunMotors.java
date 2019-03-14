@@ -2,14 +2,12 @@ package frc.robot.commands;
 
 import frc.robot.Robot;
 import frc.robot.subsystems.Rotater;
-import frc.robot.subsystems.OI;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class RunMotors extends Command
 {
     private Rotater rotater;
-    private OI oi;
 
     public RunMotors(){
         requires(Robot.rotater);

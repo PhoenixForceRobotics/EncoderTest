@@ -3,8 +3,6 @@ package frc.robot.utility;
 import java.util.logging.Logger;
 import java.util.logging.StreamHandler;
 
-import frc.robot.Constants;
-
 import java.util.logging.SimpleFormatter;
 
 public class Log{
